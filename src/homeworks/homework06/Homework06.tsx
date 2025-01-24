@@ -20,6 +20,6 @@ const add = (a: number, b: number): number => {
   return a - b;
 };
 
-const logMessage = (message: string) => {
+const logMessage = (message: string): void => {
   console.log(message);
 };
