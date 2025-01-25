@@ -156,7 +156,7 @@ function Lesson07() {
   console.log(getAction(TRAFFIC_LITE.RED));
 
   //-----Mixed enum (strings and numbers)
-  enum RESULT {    
+  enum RESULT {   
     YES = "yes",
     NO = 0      
 }
