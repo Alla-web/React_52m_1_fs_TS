@@ -1,6 +1,7 @@
 //сборщик упрощает импорт стилей только в компонент
 import "./styles.css";
 import { ButtonProps } from "./types";
+import { MainButton } from "./styles";
 
 //создаём интерфейс и переносим его в отдельный файл
 // interface ButtonProps {
@@ -11,9 +12,9 @@ import { ButtonProps } from "./types";
 
 function Button({ name = "SEND", type = "button", onClick }: ButtonProps) {
   return (
-    <button className="main-button" type={type} onClick={onClick}>
+    <MainButton type={type} onClick={onClick}>
       {name}
-    </button>
+    </MainButton>
   );
 }
 
