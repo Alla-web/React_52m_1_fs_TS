@@ -3,9 +3,10 @@ import "./App.css";
 //lessons
 // import Lesson06 from "./lessons/lesson06/Lesson06";
 // import Lesson07 from "./lessons/Lesson07/Lesson07";
+import Lesson08 from "./lessons/Lesson08/Lesson08";
 
 //selflearning
-import Selflearning07 from "./lessons/Lesson07/Selflearning07";
+// import Selflearning07 from "./lessons/Lesson07/Selflearning07";
 
 //homeworks
 
@@ -19,7 +20,9 @@ function App() {
         {/* <Lesson06 /> */}
         {/* --------------Topic: Object types, enum */}
         {/* <Lesson07 /> */}
-        <Selflearning07/>
+        {/* <Selflearning07/> */}
+        {/* --------------Topic: Styling components */}
+        <Lesson08/>
       </div>
     </>
   );
