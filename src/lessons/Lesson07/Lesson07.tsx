@@ -114,7 +114,7 @@ function Lesson07() {
     address: "Berlin, 12347",
   };
 
-  //----Привер использования union ограничения переменной по значениям
+  //----Пример использования union ограничения переменной по значениям
   type Status = "success" | "error" | "loading";
   const status: Status = "error";
   //   const api: Status = 'default'; - ошибка: значения 'default' нет в union-ограничениях типа Status
