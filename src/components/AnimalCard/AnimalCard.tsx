@@ -1,8 +1,8 @@
 import "./styles.css";
-import { AnimalProps } from "./types";
+import { AnimalCardProps } from "./types";
 
 //children - зарезервированное имя Props
-function AnimalCard({ animalName, animalSpecies, animalImg, children }: AnimalProps) {
+function AnimalCard({ animalName, animalSpecies, animalImg, children }: AnimalCardProps) {
   return (
     <div className="animalCard-container">
       <h3>{animalName}</h3>

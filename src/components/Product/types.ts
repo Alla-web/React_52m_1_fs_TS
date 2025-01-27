@@ -1,5 +1,5 @@
-export type ProductProps = {
+export interface ProductProps {
     productName: string,
-    productPrice: number
+    productPrice?: number | string
     // productPrice: number | bigint // не работает?
 }

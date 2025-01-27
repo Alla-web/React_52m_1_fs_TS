@@ -1,7 +1,7 @@
 import "./styles.css";
 import { ProductProps } from "./types";
 
-function Product({ productName, productPrice }: ProductProps) {
+function Product({ productName='Uncnown', productPrice }: ProductProps) {
   return (
     <div className="product-container">
       <div className="product-property-container">

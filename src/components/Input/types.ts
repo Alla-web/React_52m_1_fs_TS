@@ -1,7 +1,7 @@
-export type InputProps = {
-    id: string,
+export interface InputProps {
+    id?: string,
     name: string,
-    type: string,
-    placeholder: string,
-    label: string
+    type?: 'text' | 'email' | 'password' | 'telefon' | 'url' | 'number',
+    placeholder?: string,
+    label?: string
 }

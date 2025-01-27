@@ -1,6 +1,8 @@
-export type AnimalProps = {
+import { ReactNode } from "react";
+
+export type AnimalCardProps = {
     animalName: string,
     animalSpecies: string,
     animalImg: string,
-    children?: React.ReactNode; 
+    children?: ReactNode; 
 }
