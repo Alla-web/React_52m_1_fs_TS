@@ -1,3 +1,8 @@
+//Discriminated union type - дата рождения обязательное, если заполнено значение возраста
+// type ExampleDiscriminired =
+//   | { age: string; date: string }
+//   | { age?: undefined; date?: string };
+
 //Пример типизации, когда значением свойства объекта является другой объект
 // interface AnimalName {
 //   firstName: string,
@@ -13,11 +18,11 @@
 // }
 
 interface AnimalData {
-  name: string,
-  species: string,
-  role: string,
-  skills: string[],
-  image: string
+  name: string;
+  species: string;
+  role: string;
+  skills: string[];
+  image: string;
 }
 
 export const animalsData: AnimalData[] = [
