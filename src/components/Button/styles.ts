@@ -1,14 +1,18 @@
 import styled from "@emotion/styled";
 
-export const MainButton = styled.button`
+interface ButtonStyledProps {
+  disabled?: boolean,
+}
+
+export const MainButton = styled.button<ButtonStyledProps>`
   width: 100%;
   min-height: 70px;
   padding: 20px 54px;
-  background-color: #1f27f5;
+  background-color: ${({disabled})=>disabled ? 'grey':'#1f27f5'};
   color: white;
   border: none;
   border-radius: 4px;
   font-size: 20px;
   font-weight: 600;
-  cursor: pointer;
+  cursor: ${({disabled})=>disabled? "not-allowed" : "pointer"};
 `;

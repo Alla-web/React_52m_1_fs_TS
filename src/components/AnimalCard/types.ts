@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type AnimalCardProps = {
+export interface AnimalCardProps {
     animalName: string,
     animalSpecies: string,
     animalImg: string,

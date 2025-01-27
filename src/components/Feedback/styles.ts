@@ -1,4 +1,6 @@
-.feedback-container {
+import styled from "@emotion/styled";
+
+export const FeedbackContainerStyled = styled.div`
   padding: 40px;
   min-width: 500px;
   min-height: 200px;
@@ -10,33 +12,33 @@
   background-color: rgb(254, 254, 150);
   /* border-radius: 8px;
   border: 2px solid rgb(166, 175, 184); */
-}
+`;
 
-.counter-container {
+export const CounterWrapperStyled = styled.div`
   display: flex;
   justify-content: space-around;
   gap: 40px;
-}
+`;
 
-.container {
+export const ContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   gap: 30px;
-}
+`;
 
-.hw4-button-container {
+export const Hw4ButtonCounter = styled.div`
   width: 200px;
-}
+`;
 
-.resetButton-container {
+export const ResetButtonContainer = styled.div`
   width: 100%;
-}
+`;
 
-.result-container {
+export const ResultContainer = styled.div`
   font-size: 30px;
   font-weight: bold;
   color: rgb(250, 62, 222);
-}
+`;

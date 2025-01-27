@@ -24,7 +24,7 @@ export const BoxInfo = styled.div<BoxInfoStyledProps>`
   //Добавление логики через Props для использования различных свойств
   background-color: ${(props) => (props.primary ? "rebeccapurple" : "purple")};
   /* border: 2px solid black; */
-  //Добавление логики при помощи декомпозиции
+  //Добавление логики при помощи декомпозиции props
   border: ${({ primary }) =>
     primary ? "2px solid black" : "6px solid orange"};
   border-radius: 8px;
