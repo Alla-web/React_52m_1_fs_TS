@@ -1,5 +1,4 @@
 //сборщик упрощает импорт стилей только в компонент
-import "./styles.css";
 import { ButtonProps } from "./types";
 import { MainButton } from "./styles";
 

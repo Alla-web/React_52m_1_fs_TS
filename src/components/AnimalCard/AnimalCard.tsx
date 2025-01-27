@@ -1,16 +1,16 @@
-import "./styles.css";
+import { AnimalCardStyled, ImageStyled } from "./styles";
 import { AnimalCardProps } from "./types";
 
 //children - зарезервированное имя Props
 function AnimalCard({ animalName, animalSpecies, animalImg, children }: AnimalCardProps) {
   return (
-    <div className="animalCard-container">
+    <AnimalCardStyled>
       <h3>{animalName}</h3>
       <div>{animalSpecies}</div>
-      <img src={animalImg} alt="Animal" className="animal-img" />
+      <ImageStyled src={animalImg} alt="Animal" />
       {/* prop children позволяет добавлять дополнительную структуру (jsx, компоненты в компонент) */}
       {children}
-    </div>
+    </AnimalCardStyled>
   );
 }
 

@@ -1,4 +1,4 @@
-import "./styles.css";
+import { Lesson07ContainerStyled } from "./styles";
 
 function Lesson07() {
   //-----Тип any - любой тип данных
@@ -165,9 +165,9 @@ function Lesson07() {
   console.log(result);
   
   return (
-    <div className="lesson07-container">
+    <Lesson07ContainerStyled>
       <div>TS-lesson 6</div>
-    </div>
+    </Lesson07ContainerStyled>
   );
 }
 
