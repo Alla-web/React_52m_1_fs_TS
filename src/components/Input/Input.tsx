@@ -1,7 +1,7 @@
 import { InputProps } from "./types";
 import { InputContainerStyled, InputElementStyled, Label } from "./styles"; 
 
-function Input({ id, name, type = 'text', placeholder, label }: InputProps) {
+function Input({ id, name, type = 'text', placeholder, label, value, onChange }: InputProps) {
   return (
     <InputContainerStyled>
       {label && <Label htmlFor={id}>{label}</Label>}
@@ -10,6 +10,8 @@ function Input({ id, name, type = 'text', placeholder, label }: InputProps) {
         name={name}
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       />
     </InputContainerStyled>
   );

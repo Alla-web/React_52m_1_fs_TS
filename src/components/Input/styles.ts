@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const InputContainerStyled = styled.div`
-  width: 470px;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@ export const InputContainerStyled = styled.div`
 `;
 
 export const InputElementStyled = styled.input`
-  width: 470px;
+  width: 100%;
   height: 50px;
   border-radius: 4px;
   padding: 12px;

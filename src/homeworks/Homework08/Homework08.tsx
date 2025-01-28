@@ -10,6 +10,9 @@ function Homework08() {
       <ButtonContainerStyled>
         <Button name="DISABLED BUTTON" disabled/>
       </ButtonContainerStyled>
+      <ButtonContainerStyled>
+        <Button name="ERROR BUTTON" isRed/>
+      </ButtonContainerStyled>
     </HW08ContaineStyled>
   );
 }
