@@ -16,3 +16,6 @@ export const AnimalCardStyled = styled.div`
 export const ImageStyled = styled.img`
   width: 100px;
 `;
+
+export const AnimalNameStyled = styled.h3``;
+export const AnimalSpeciesStyled = styled.div``;

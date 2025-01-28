@@ -156,14 +156,36 @@ function Lesson07() {
   console.log(getAction(TRAFFIC_LITE.RED));
 
   //-----Mixed enum (strings and numbers)
-  enum RESULT {   
+  enum RESULT {
     YES = "yes",
-    NO = 0      
-}
-  
+    NO = 0,
+  }
+
   const result: RESULT = RESULT.YES;
   console.log(result);
-  
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  //Пример типизации, когда значением свойства объекта является другой объект
+  interface AnimalName {
+    firstName: string;
+    lastName: string;
+  }
+
+  interface AnimalData {
+    name: string;
+    species: string;
+    role: string;
+    skills: string[];
+    image: string;
+  }
+
+  //Discriminated union type - дата рождения обязательное, если заполнено значение возраста
+  type ExampleDiscriminired =
+    | { age: string; date: string }
+    | { age?: undefined; date?: string };
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
   return (
     <Lesson07ContainerStyled>
       <div>TS-lesson 6</div>
