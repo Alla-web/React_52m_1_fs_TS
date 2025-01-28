@@ -20,3 +20,5 @@ export const InputElementStyled = styled.input`
     color: gray;
   }
 `;
+
+export const Label = styled.label``;

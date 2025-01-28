@@ -5,10 +5,10 @@ function Homework08() {
   return (
     <HW08ContaineStyled>
       <ButtonContainerStyled>
-        <Button name="ABLED BUTTON" type="button" />
+        <Button name="ABLED BUTTON" />
       </ButtonContainerStyled>
       <ButtonContainerStyled>
-        <Button name="DISABLED BUTTON" disabled type="button" />
+        <Button name="DISABLED BUTTON" disabled/>
       </ButtonContainerStyled>
     </HW08ContaineStyled>
   );

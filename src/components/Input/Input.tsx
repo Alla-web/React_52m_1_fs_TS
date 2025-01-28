@@ -1,10 +1,10 @@
 import { InputProps } from "./types";
-import { InputContainerStyled, InputElementStyled } from "./styles"; 
+import { InputContainerStyled, InputElementStyled, Label } from "./styles"; 
 
 function Input({ id, name, type = 'text', placeholder, label }: InputProps) {
   return (
     <InputContainerStyled>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && <Label htmlFor={id}>{label}</Label>}
       <InputElementStyled
         id={id}
         name={name}
