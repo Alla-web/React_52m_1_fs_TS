@@ -1,3 +1,4 @@
+import Lesson10 from "./lessons/Lesson10/Lesson10";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //lessons
@@ -14,7 +15,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
-import Consultation04 from "./consultations/Consultation04/Consultation04";
+// import Consultation04 from "./consultations/Consultation04/Consultation04";
 
 function App() {
   return (
@@ -31,7 +32,9 @@ function App() {
       {/* <Homework08/>  */}
       {/* --------------Topic: Control components, useEffect (hoock) */}
       {/* <Lesson09/> */}
-      <Consultation04 />
+      {/* <Consultation04 /> */}
+      {/* --------------Topic: useEffect */}
+      <Lesson10/>
     </>
   );
 }
