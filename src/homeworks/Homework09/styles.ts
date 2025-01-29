@@ -11,6 +11,7 @@ const boxBasicStyles = css`
 export const Homework09Container = styled.div`
   ${boxBasicStyles}
   gap: 30px;
+  padding: 50px;
   flex: 1;
 `;
 
@@ -35,10 +36,9 @@ export const InputsContainer = styled.div`
 export const ResultsContainer = styled.div`
 ${boxBasicStyles}
 gap: 20px;
-padding: 30px;
+padding: 30px 60px;
 background-color: aliceblue;
 width: 550px;
-min-height: ;
 border: 1px solid black;
 border-radius: 4px;
 `
@@ -50,5 +50,5 @@ background-color: white;
 border: 1px solid black;
 border-radius: 4px;
 width: 100%;
-padding: 0 4px;
+padding: 0 12px;
 `;
