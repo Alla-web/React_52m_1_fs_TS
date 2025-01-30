@@ -15,14 +15,14 @@ function Homework10() {
   const [errorState, setErrorState] = useState<undefined | string>(undefined);
 
   //контролируем наши инпуты
-  const onChangeFirst = (event: ChangeEvent<HTMLInputElement>)=>{
+  const onChangeFirst = (event: ChangeEvent<HTMLInputElement>) => {
     setFirstState(event.target.value);
-  }
+  };
 
   const QWERY_URL = "https://dog.ceo/api/breeds/image/random";
 
   const getDataFirst = async () => {
-    //очистки состояний 
+    //очистки состояний
     setFirstState("");
     setErrorState(undefined);
 
@@ -37,9 +37,9 @@ function Homework10() {
     }
   };
 
-    const getDataSecond = async () => {
-    //очистки состояний 
-    setSecondState('');
+  const getDataSecond = async () => {
+    //очистки состояний
+    setSecondState("");
     setErrorState(undefined);
     try {
       const result = await axios.get(QWERY_URL);
@@ -52,14 +52,31 @@ function Homework10() {
   };
 
   //отправлять запросы каждый раз при изменении значения в Input
-  useEffect(()=>{getDataFirst()}, [firstState]);
-//   useEffect(()=>{getDataSecond()}, [secondState]);
+  // useEffect(() => {
+  //   if (firstState !== "") {
+  //     getDataFirst();
+  //   }
+  // }, [firstState]);
+
+  // useEffect(() => {
+  //   if (secondState !== "") {
+  //     getDataSecond();
+  //   }
+  // }, [secondState]);
 
   return (
     <Homework10Container>
       <InputsContainer>
-        <Input name="first" placeholder='Enter something' onChange={onChangeFirst} />
-        <Input name="second" placeholder='Enter something' onChange={getDataSecond} />
+        <Input
+          name="first"
+          placeholder="Enter something"
+          onChange={onChangeFirst}
+        />
+        <Input
+          name="second"
+          placeholder="Enter something"
+          onChange={getDataSecond}
+        />
       </InputsContainer>
       {(firstState || secondState) && (
         <ResultsContainer>
