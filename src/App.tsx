@@ -1,4 +1,3 @@
-import Lesson10 from "./lessons/Lesson10/Lesson10";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //lessons
@@ -6,12 +5,14 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson07 from "./lessons/Lesson07/Lesson07";
 // import Lesson08 from "./lessons/Lesson08/Lesson08";
 // import Lesson09 from "./lessons/Lesson09/Lesson09";
+// import Lesson10 from "./lessons/Lesson10/Lesson10";
 
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
 
 //homeworks
 // import Homework08 from "./homeworks/Homework08/Homework08";
+import Homework10 from "./homeworks/Homework10/Homework10";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
@@ -34,7 +35,8 @@ function App() {
       {/* <Lesson09/> */}
       {/* <Consultation04 /> */}
       {/* --------------Topic: useEffect */}
-      <Lesson10/>
+      {/* <Lesson10/> */}
+      <Homework10/>
     </>
   );
 }
