@@ -55,7 +55,7 @@ function Lesson10() {
         setJoke(`${data.setup} - ${data.punchline}`);
     } catch (error: any) {
         console.log(error);        
-        setError(` ${error.status}: ${error.message}`);
+        setError(`${error.status}: ${error.message}`);
     } finally {
         setIsLoading(false); //????
     }

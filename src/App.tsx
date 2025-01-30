@@ -1,4 +1,3 @@
-import Lesson10 from "./lessons/Lesson10/Lesson10";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //lessons
@@ -6,13 +5,15 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson07 from "./lessons/Lesson07/Lesson07";
 // import Lesson08 from "./lessons/Lesson08/Lesson08";
 // import Lesson09 from "./lessons/Lesson09/Lesson09";
+// import Lesson10 from "./lessons/Lesson10/Lesson10";
+import Lesson11 from "./lessons/Lesson11/Lesson11";
 
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
 
 //homeworks
 // import Homework08 from "./homeworks/Homework08/Homework08";
-import Homework09 from "./homeworks/Homework09/Homework09";
+// import Homework09 from "./homeworks/Homework09/Homework09";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
@@ -34,9 +35,9 @@ function App() {
       {/* --------------Topic: Control components, useEffect (hoock) */}
       {/* <Lesson09/> */}
       {/* <Consultation04 /> */}
-      <Homework09/>
+      {/* <Homework09/> */}
       {/* --------------Topic: useEffect */}
-      <Lesson10/>
+      <Lesson11/>
     </>
   );
 }
