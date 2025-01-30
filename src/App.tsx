@@ -1,3 +1,4 @@
+import Lesson10 from "./lessons/Lesson10/Lesson10";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //lessons
@@ -34,6 +35,8 @@ function App() {
       {/* <Lesson09/> */}
       {/* <Consultation04 /> */}
       <Homework09/>
+      {/* --------------Topic: useEffect */}
+      <Lesson10/>
     </>
   );
 }
