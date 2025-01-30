@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import {
@@ -18,6 +18,13 @@ function Lesson11() {
   //делаем state для error для хранения ошибок
   const [errorState, setErrorState] = useState<undefined | string>(undefined);
   console.log(errorState);
+
+  //берём под контроль инпут
+  const [inputValue, setInputValue] = useState<undefined | string>(undefined);
+
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
 
   const SEARCH_URL = "https://catfact.ninja/fact";
 
@@ -42,14 +49,14 @@ function Lesson11() {
     setResultsState([]);
   };
 
-    useEffect(() => {
-      getData();
-    }, []);
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <Lesson11Container>
       <InputButtonContainer>
-        <Input name="search" />
+        <Input name="search" onChange={onChange}/>
         <ButtonsContainer>
           <Button name="GET MORE INFO" onClick={getData} />
           {reusltsState.length > 0 && (
