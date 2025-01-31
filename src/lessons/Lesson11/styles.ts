@@ -12,21 +12,14 @@ export const Lesson11Container = styled.div`
   gap: 30px;
   flex: 1;
   padding: 40px;
-`;
-
-export const InputButtonContainer = styled.div`
-  ${boxStyles}
-  gap: 20px;
-  width: 600px;
-  padding: 30px;
   background-color: #cfe8fd;
-  border: 1px solid #a2d2ff;
-  border-radius: 4px;
 `;
 
 export const ButtonsContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 24px;
+  width: 600px; 
 `;
 
 export const ResuiltsContainer = styled.ol`

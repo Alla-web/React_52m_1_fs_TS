@@ -1,30 +1,22 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import Button from "../../components/Button/Button";
-import Input from "../../components/Input/Input";
 import {
   ButtonsContainer,
-  ErrorBlock,
-  InputButtonContainer,
+  ErrorBlock, 
   Lesson11Container,
   ResuiltsContainer,
   ResultsItem,
 } from "./styles";
 import axios from "axios";
+import { v4 } from "uuid";
 
 function Lesson11() {
-  //делаем state для результатов для хранения результатов
+  //делаем state для результатов запроса для хранения результатов
   const [reusltsState, setResultsState] = useState<string[]>([]);
 
   //делаем state для error для хранения ошибок
   const [errorState, setErrorState] = useState<undefined | string>(undefined);
   console.log(errorState);
-
-  //берём под контроль инпут
-  const [inputValue, setInputValue] = useState<undefined | string>(undefined);
-
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
 
   const SEARCH_URL = "https://catfact.ninja/fact";
 
@@ -45,6 +37,10 @@ function Lesson11() {
     }
   };
 
+  const catFacts = reusltsState.map((value) => (
+    <ResultsItem>{value}</ResultsItem>
+  ));
+
   const deleteData = () => {
     setResultsState([]);
   };
@@ -54,21 +50,16 @@ function Lesson11() {
   }, []);
 
   return (
-    <Lesson11Container>
-      <InputButtonContainer>
-        <Input name="search" onChange={onChange}/>
-        <ButtonsContainer>
-          <Button name="GET MORE INFO" onClick={getData} />
-          {reusltsState.length > 0 && (
-            <Button name="DELETE DATA" isRed onClick={deleteData} />
-          )}
-        </ButtonsContainer>
-      </InputButtonContainer>
+    <Lesson11Container key={v4()}>
+      <ButtonsContainer>
+        <Button name="GET MORE INFO" onClick={getData} />
+        {reusltsState.length > 0 && (
+          <Button name="DELETE DATA" isRed onClick={deleteData} />
+        )}
+      </ButtonsContainer>
       {reusltsState.length > 0 && (
         <ResuiltsContainer>
-          {reusltsState.map((value, index) => (
-            <ResultsItem key={index}>{value}</ResultsItem>
-          ))}
+          {catFacts}
         </ResuiltsContainer>
       )}
       {errorState && <ErrorBlock>{errorState}</ErrorBlock>}
