@@ -1,9 +1,10 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import Button from "../../components/Button/Button";
-import Spinner from "../../components/Spinner/Spinner";
+import Button from "components/Button/Button";
+import Spinner from "components/Spinner/Spinner";
 import { Lesson10Wrapper, ButtonWrapper, ResultBlock, ErrorBlock, InputContainer } from "./styles";
 import axios from "axios";
-import Input from "../../components/Input/Input";
+import Input from "components/Input/Input";
+
 
 function Lesson10() {
     const [joke, setJoke] = useState<string>("");
