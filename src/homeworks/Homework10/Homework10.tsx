@@ -70,7 +70,7 @@ function Homework10() {
         <Input
           name="first"
           placeholder="Enter something"
-          onChange={onChangeFirst}
+          onChange={getDataFirst}
         />
         <Input
           name="second"
