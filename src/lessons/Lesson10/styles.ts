@@ -12,7 +12,7 @@ export const ButtonWrapper = styled.div`
   width: 300px;
 `
 export const ResultBlock = styled.div`
-  width: 600px;
+  width: 600px;  
   padding: 20px;
   background-color: #E06AD1;
   border-radius: 6px;

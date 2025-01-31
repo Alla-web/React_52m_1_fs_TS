@@ -6,7 +6,9 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson08 from "./lessons/Lesson08/Lesson08";
 // import Lesson09 from "./lessons/Lesson09/Lesson09";
 // import Lesson10 from "./lessons/Lesson10/Lesson10";
+import Lesson11 from "./lessons/Lesson11/Lesson11";
 import Lesson12 from "lessons/Lesson12/Lesson12";
+
 
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
@@ -37,6 +39,7 @@ function App() {
       {/* <Consultation04 /> */}
       {/* <Homework09/> */}
       {/* --------------Topic: useEffect */}
+      <Lesson11/>
       {/* <Lesson10/> */}
       {/* --------------Topic: formic, yup */}
       <Lesson12/>
