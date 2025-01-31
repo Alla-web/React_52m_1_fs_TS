@@ -6,6 +6,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson08 from "./lessons/Lesson08/Lesson08";
 // import Lesson09 from "./lessons/Lesson09/Lesson09";
 // import Lesson10 from "./lessons/Lesson10/Lesson10";
+import Lesson12 from "lessons/Lesson12/Lesson12";
 
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
@@ -16,7 +17,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
-import Consultation04 from "./consultations/Consultation04/Consultation04";
+// import Consultation04 from "./consultations/Consultation04/Consultation04";
 
 function App() {
   return (
@@ -33,10 +34,12 @@ function App() {
       {/* <Homework08/>  */}
       {/* --------------Topic: Control components, useEffect (hoock) */}
       {/* <Lesson09/> */}
-      <Consultation04 />
+      {/* <Consultation04 /> */}
       {/* <Homework09/> */}
       {/* --------------Topic: useEffect */}
       {/* <Lesson10/> */}
+      {/* --------------Topic: formic, yup */}
+      <Lesson12/>
     </>
   );
 }
