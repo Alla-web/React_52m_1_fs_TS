@@ -9,7 +9,7 @@ function LoginForm (){
             <Title>Login form</Title>
             <InputsContainer>
                 <Input name='email' />
-                <Input name='password'/>
+                <Input name='password' />
             </InputsContainer>
             <Button/>
         </LoginFormContainer>

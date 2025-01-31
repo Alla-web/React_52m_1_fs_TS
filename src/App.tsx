@@ -16,7 +16,7 @@ import Homework10 from "./homeworks/Homework10/Homework10";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
-// import Consultation04 from "./consultations/Consultation04/Consultation04";
+// import Consultation04 from "./consultations/Consultation04/Consultation04-05";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
       {/* <Homework08/>  */}
       {/* --------------Topic: Control components, useEffect (hoock) */}
       {/* <Lesson09/> */}
-      {/* <Consultation04 /> */}
+      {/* <Consultation04-05 /> */}
       {/* --------------Topic: useEffect */}
       {/* <Lesson10/> */}
       <Homework10/>
