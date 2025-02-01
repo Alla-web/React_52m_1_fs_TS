@@ -42,7 +42,7 @@ function App() {
       <Lesson11/>
       {/* <Lesson10/> */}
       {/* --------------Topic: formic, yup */}
-      <Lesson12/>
+      {/* <Lesson12/> */}
     </>
   );
 }

@@ -9,6 +9,7 @@ import {
 } from "./styles";
 import axios from "axios";
 import { v4 } from "uuid";
+import Spinner from "components/Spinner/Spinner";
 
 function Lesson11() {
   //делаем state для результатов запроса для хранения результатов
@@ -18,11 +19,15 @@ function Lesson11() {
   const [errorState, setErrorState] = useState<undefined | string>(undefined);
   console.log(errorState);
 
+  //делаем state для спиннера
+  const [isLoading, setLoading] = useState(false);
+
   const SEARCH_URL = "https://catfact.ninja/fact";
 
   const getData = async () => {
     //очистки перед запуском
     setErrorState("");
+    setLoading(true);
 
     try {
       const result = await axios.get(SEARCH_URL);
@@ -34,6 +39,7 @@ function Lesson11() {
       // console.log(error);
       setErrorState(`${error.code}: ${error.message}`);
     } finally {
+      setLoading(false);
     }
   };
 
@@ -57,6 +63,7 @@ function Lesson11() {
           <Button name="DELETE DATA" isRed onClick={deleteData} />
         )}
       </ButtonsContainer>
+      {isLoading && <Spinner/>}
       {reusltsState.length > 0 && (
         <ResuiltsContainer>
           {catFacts}
