@@ -1,24 +1,29 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import Button from "components/Button/Button";
 import Spinner from "components/Spinner/Spinner";
-import { Lesson10Wrapper, ButtonWrapper, ResultBlock, ErrorBlock, InputContainer } from "./styles";
+import {
+  Lesson10Wrapper,
+  ButtonWrapper,
+  ResultBlock,
+  ErrorBlock,
+  InputContainer,
+} from "./styles";
 import axios from "axios";
 import Input from "components/Input/Input";
 
-
 function Lesson10() {
-    const [joke, setJoke] = useState<string>("");
-    //state для ошибки
-    const [error, setError] = useState<undefined | string>(undefined);
-    //state для Loading
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    //state для ???
-    const [jokeValue, setJokeValue] = useState<string>('');
+  const [joke, setJoke] = useState<string>("");
+  //state для ошибки
+  const [error, setError] = useState<undefined | string>(undefined);
+  //state для Loading
+  const [isLoading, setLoading] = useState<boolean>(false);
+  //state для ???
+  const [jokeValue, setJokeValue] = useState<string>("");
 
-    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setJokeValue(event.target.value);
-    }
-    
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setJokeValue(event.target.value);
+  };
+
   //пример запроса с fetch
   //   const fetchJokeData = async () => {
   //     const JOKE_URL: string = "https://official-joke-api.appspot.com/random_joke";
@@ -42,31 +47,36 @@ function Lesson10() {
 
   //пример запроса мс ипользваниме axios
   const fetchJokeData = async () => {
-    const JOKE_URL: string = "https://official-joke-api.appspot.com/random_joke";
+    const JOKE_URL: string =
+      "https://official-joke-api.appspot.com/random_joke";
 
-    //перед отправкой запроса очищаем наши контейнеры от шутки и сообщения об ошибке 
-    setJoke('');
+    //перед отправкой запроса очищаем наши контейнеры от шутки и сообщения об ошибке
+    setJoke("");
     setError(undefined);
 
     try {
-        setIsLoading(true);
-        const result = await axios.get(JOKE_URL);
-        const data = result.data;
-        console.log(data);
-        setJoke(`${data.setup} - ${data.punchline}`);
+      setLoading(true);
+      const result = await axios.get(JOKE_URL);
+      const data = result.data;
+      console.log(data);
+      setJoke(`${data.setup} - ${data.punchline}`);
     } catch (error: any) {
-        console.log(error);        
-        setError(`${error.status}: ${error.message}`);
+      console.log(error);
+      setError(`${error.status}: ${error.message}`);
     } finally {
-        setIsLoading(false); //????
+      setLoading(false); 
     }
   };
 
   //отправлять запрос при загрузке страницы
-  useEffect(() => { fetchJokeData() }, [])
+  useEffect(() => {
+    fetchJokeData();
+  }, []);
 
   //отправлять запрос каждый раз при изменении значения в Input
-  useEffect(() => { fetchJokeData() }, [jokeValue])
+  useEffect(() => {
+    fetchJokeData();
+  }, [jokeValue]);
 
   return (
     <Lesson10Wrapper>
@@ -74,10 +84,10 @@ function Lesson10() {
         <Button name="GET JOKE" onClick={fetchJokeData} />
       </ButtonWrapper>
       <InputContainer>
-      <Input name='joke' value={jokeValue} onChange={onChange}/>
+        <Input name="joke" value={jokeValue} onChange={onChange} />
       </InputContainer>
-      <ResultBlock>{joke}</ResultBlock>
-      {isLoading && <Spinner/>}
+      {isLoading && <Spinner />}
+      {joke && <ResultBlock>{joke}</ResultBlock>}
       {error && <ErrorBlock>{error}</ErrorBlock>}
     </Lesson10Wrapper>
   );

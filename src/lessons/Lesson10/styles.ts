@@ -5,7 +5,7 @@ export const Lesson10Wrapper = styled.div`
   flex-direction: column;
   align-items: center; 
   flex: 1;
-  gap: 20px;
+  gap: 30px;
   padding: 40px;
 `
 export const ButtonWrapper = styled.div`

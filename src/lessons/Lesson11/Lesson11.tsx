@@ -27,9 +27,9 @@ function Lesson11() {
   const getData = async () => {
     //очистки перед запуском
     setErrorState("");
-    setLoading(true);
-
+   
     try {
+      setLoading(true);
       const result = await axios.get(SEARCH_URL);
       console.log(result);
       const data = result.data.fact;

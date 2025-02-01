@@ -24,7 +24,7 @@ export const InputElementStyled = styled.input`
 export const Label = styled.label``;
 
 export const ErrorMessage = styled.div`
-height: 18px;
-color: red;
-
-`
+  height: 18px;
+  color: red;
+  font-size: 18px;
+`;

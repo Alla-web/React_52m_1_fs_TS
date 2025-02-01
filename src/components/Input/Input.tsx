@@ -27,7 +27,7 @@ function Input({
         value={value}
         onChange={onChange} 
       />
-      <ErrorMessage>{errorMessage}</ErrorMessage>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </InputContainerStyled>
   );
 }
