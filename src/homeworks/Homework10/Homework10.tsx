@@ -33,9 +33,9 @@ function Homework10() {
     //очистки состояний
     setDogUrlFirst("");
     setErrorState(undefined);
-    setLoading(true);
-
+   
     try {
+      setLoading(true);
       const result = await axios.get(QWERY_URL);
       const data = result.data;
       console.log(result);
@@ -52,9 +52,9 @@ function Homework10() {
     //очистки состояний
     setDogUrlSecond("");
     setErrorState(undefined);
-    setLoading(true);
-
+   
     try {
+      setLoading(true);
       const result = await axios.get(QWERY_URL);
       const data = result.data;
       setDogUrlSecond(data.message);
