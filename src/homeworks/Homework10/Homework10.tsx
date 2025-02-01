@@ -8,80 +8,97 @@ import {
 import Input from "../../components/Input/Input";
 import { ChangeEvent, useEffect, useState } from "react";
 import axios from "axios";
+import Spinner from "../../components/Spinner/Spinner";
 
 function Homework10() {
   const [firstState, setFirstState] = useState<string | undefined>("");
   const [secondState, setSecondState] = useState<string | undefined>("");
+  const [dogUrlFirst, setDogUrlFirst] = useState<string>("");
+  const [dogUrlSecond, setDogUrlSecond] = useState<string>("");
   const [errorState, setErrorState] = useState<undefined | string>(undefined);
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   //контролируем наши инпуты
   const onChangeFirst = (event: ChangeEvent<HTMLInputElement>) => {
     setFirstState(event.target.value);
   };
 
+  const onChangeSecond = (event: ChangeEvent<HTMLInputElement>) => {
+    setSecondState(event.target.value);
+  };
+
   const QWERY_URL = "https://dog.ceo/api/breeds/image/random";
 
   const getDataFirst = async () => {
     //очистки состояний
-    setFirstState("");
+    setDogUrlFirst("");
     setErrorState(undefined);
+    setLoading(true);
 
     try {
       const result = await axios.get(QWERY_URL);
       const data = result.data;
       console.log(result);
-      setFirstState(data.message);
+      setDogUrlFirst(data.message);
+      console.log(firstState);
     } catch (error: any) {
       setErrorState(`${error.status}: ${error.message}`);
     } finally {
+      setLoading(false);
     }
   };
 
   const getDataSecond = async () => {
     //очистки состояний
-    setSecondState("");
+    setDogUrlSecond("");
     setErrorState(undefined);
+    setLoading(true);
+
     try {
       const result = await axios.get(QWERY_URL);
       const data = result.data;
-      setSecondState(data.message);
+      setDogUrlSecond(data.message);
     } catch (error: any) {
       setErrorState(`${error.status}: ${error.message}`);
     } finally {
+      setLoading(false);
     }
   };
 
   //отправлять запросы каждый раз при изменении значения в Input
-  // useEffect(() => {
-  //   if (firstState !== "") {
-  //     getDataFirst();
-  //   }
-  // }, [firstState]);
+  useEffect(() => {
+    if (firstState) {
+      getDataFirst();
+    }
+  }, [firstState]);
 
-  // useEffect(() => {
-  //   if (secondState !== "") {
-  //     getDataSecond();
-  //   }
-  // }, [secondState]);
+  useEffect(() => {
+    if (secondState) {
+      getDataSecond();
+    }
+  }, [secondState]);
 
   return (
     <Homework10Container>
       <InputsContainer>
         <Input
           name="first"
+          value={firstState}
+          onChange={onChangeFirst}
           placeholder="Enter something"
-          onChange={getDataFirst}
         />
         <Input
           name="second"
+          value={secondState}
+          onChange={onChangeSecond}
           placeholder="Enter something"
-          onChange={getDataSecond}
         />
       </InputsContainer>
-      {(firstState || secondState) && (
+      {isLoading && <Spinner/>}
+      {(dogUrlFirst || dogUrlSecond) && (
         <ResultsContainer>
-          {firstState && <ResultImg src={firstState} alt="First photo" />}
-          {secondState && <ResultImg src={secondState} alt="Second photo" />}
+          {dogUrlFirst && <ResultImg src={dogUrlFirst} alt="First photo" />}
+          {dogUrlSecond && <ResultImg src={dogUrlSecond} alt="Second photo" />}
         </ResultsContainer>
       )}
       {errorState && <ErrorBlock>{errorState}</ErrorBlock>}

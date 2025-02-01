@@ -4,13 +4,13 @@ export const Homework10Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 30px;
   flex: 1;
   padding: 30px;
 `;
 export const InputsContainer = styled.div`
-  width: 500px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,11 +22,11 @@ export const InputsContainer = styled.div`
 `;
 
 export const ResultsContainer = styled.div`
-  width: 500px;
+  min-width: 600px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  /* flex-direction: column; */
+  align-items: flex-start;
+  gap: 30px;
   background-color: aliceblue;
   border: 1px solid black;
   border-radius: 4px;
@@ -34,8 +34,9 @@ export const ResultsContainer = styled.div`
 `;
 
 export const ResultImg = styled.img`
-  width: 100%;
+  width: 240px;
   height: auto;
+  border-radius: 4px;
 `;
 
 export const ErrorBlock = styled.div`
@@ -48,3 +49,4 @@ export const ErrorBlock = styled.div`
   font-size: 28px;
   font-weight: bold;
 `;
+
