@@ -13,6 +13,7 @@ import { BoxInfo } from "../../lessons/Lesson08/styles";
 function Homework09() {
   const [emailValue, setEmailValue] = useState<string>("");
   const [passwordValue, setPasswordValue] = useState("");
+
   const [prevStateButton, setPrevStateButton] = useState<boolean>(false);
 
   //добавляем 2 дополнительных state для хранения значений, которые должны отобразиться
@@ -22,7 +23,6 @@ function Homework09() {
 
   const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
     console.log(event);
-
     setEmailValue(event.target.value);
   };
 
@@ -36,7 +36,7 @@ function Homework09() {
     setPasswordResult(passwordValue);
 
     // setPrevStateButton(true);
-    setPrevStateButton(true);
+    setPrevStateButton(!prevStateButton);
   };
 
   return (
@@ -59,10 +59,10 @@ function Homework09() {
           />
         </InputsContainer>
         {/*                                                    emailValue === '' || passwordValue === ''*/}
-        <Button type="button" onClick={showResults} disabled={!emailValue.trim() || !passwordValue.trim()}/>
+        <Button name="SHOW/HIDE" type="button" onClick={showResults} disabled={!emailValue.trim() && !passwordValue.trim()}/>
       </InputButtonContainer>
       {/* не null, undefind, 0, NaN, '' */}
-      {(emailValue || passwordValue) && (
+      {(prevStateButton) && (
         <ResultsContainer>
           <ResultValueContainer>{emailValue}</ResultValueContainer>
           <ResultValueContainer>{passwordValue}</ResultValueContainer>
