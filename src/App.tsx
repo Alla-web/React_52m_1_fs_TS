@@ -24,12 +24,8 @@ import User from "pages/Users/components/User/User";
 //homeworks
 // import Homework08 from "./homeworks/Homework08/Homework08";
 // import Homework09 from "./homeworks/Homework09/Homework09";
-
-import EmployeeForm from "components/EmployeeForm/EmployeeForm";
-
-import Homework10 from "./homeworks/Homework10/Homework10";
-
-
+// import Homework10 from "./homeworks/Homework10/Homework10";
+// import EmployeeForm from "components/EmployeeForm/EmployeeForm";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
@@ -68,7 +64,7 @@ function App() {
       {/* <Consultation04-05 /> */}
       {/* --------------Topic: useEffect */}
       {/* <Lesson10/> */}
-       {/* <Homework10/> */}
+      {/* <Homework10/> */}
       {/* <Consultation04 /> */}
       {/* <Homework09/> */}
       {/* --------------Topic: useEffect */}
@@ -76,7 +72,7 @@ function App() {
       {/* <Lesson11/> */}
       {/* --------------Topic: formic, yup */}
       {/* <Lesson12/> */}
-      <Homework12/>
+      {/* <Homework12/> */}
     </BrowserRouter>
   );
 }
