@@ -1,4 +1,4 @@
-import { EmployeeFormContainer, InputsContainer } from "./styles";
+import { Checkbox, CheckboxContainer, CheckboxLabel, EmployeeFormContainer, InputsContainer } from "./styles";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import { Formik, useFormik } from "formik";
@@ -18,9 +18,10 @@ function EmployeeForm() {
         "Check max fullname length",
         "Max 50 sumbols",
         (value) => String(value).length <= 50
-      )
-      .typeError("Fullname must be string"),
+      ),
+      // .typeError("Fullname must be string") - для строк не обязательно
     age: Yup.number()
+      .required("Age is required fild")
       .min(18, "Min 18 symbols")
       .max(80, "Max 80 symbols")
       .typeError("Age must be number"),
@@ -80,8 +81,26 @@ function EmployeeForm() {
           onChange={formik.handleChange}
           errorMessage={formik.errors.jobTitle}
         />
-      </InputsContainer>
-      <Button name="CREATE" type="submit" />
+        {/* <Input 
+        id='checkboxInput' 
+        name='agreement' 
+        type='checkbox' 
+        label="I agree"
+        checked={formik.values.agreement}
+        onChange={formik.handleChange}
+        /> */}
+      </InputsContainer> 
+     <CheckboxContainer>
+      <Checkbox
+      type="checkbox"
+      id="checkboxInput"
+      name="agreement"
+      checked={formik.values.agreement}
+      onChange={formik.handleChange}
+      />      
+      <CheckboxLabel htmlFor="checkboxInput">I agree</CheckboxLabel>
+     </CheckboxContainer>
+      <Button name="CREATE" type="submit" disabled={!formik.values.agreement}/>
     </EmployeeFormContainer>
   );
 }
