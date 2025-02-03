@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //lessons
@@ -8,7 +9,12 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson10 from "./lessons/Lesson10/Lesson10";
 // import Lesson11 from "./lessons/Lesson11/Lesson11";
 // import Lesson12 from "lessons/Lesson12/Lesson12";
-
+// Lesson 13
+import Layout from "components/Layout/Layout";
+import Home from "pages/Home/Home";
+import About from "pages/About/About";
+import Users from "pages/Users/Users";
+import User from "pages/Users/components/User/User";
 
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
@@ -23,8 +29,23 @@ import GlobalStyles from "./styles/GlobalStyles";
 
 function App() {
   return (
-    <>
+    //глобальная настройка для работы с роутингом
+    //BrowserRouter - компонет из react-router-dom, который позволяет работать с маршрутами
+    <BrowserRouter>
       <GlobalStyles />
+      <Layout>
+        {/* Routes - собирает все маршруты приложения  */}
+        <Routes>
+        {/* Route - компонент, который передается в маршрут и контент, который 
+        нужно отрендерить (отрисовать) по этому маршруту*/}
+          <Route>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/users" element={<Users/>}/>
+            <Route path="/users/user" element={<User/>}></Route>
+          </Route>
+        </Routes>
+      </Layout>
       {/* --------------Topic: TypeScript Introduction */}
       {/* <Lesson06 /> */}
       {/* <Consultation03 /> */}
@@ -43,7 +64,7 @@ function App() {
       {/* <Lesson11/> */}
       {/* --------------Topic: formic, yup */}
       {/* <Lesson12/> */}
-    </>
+    </BrowserRouter>
   );
 }
 
