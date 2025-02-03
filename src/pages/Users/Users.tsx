@@ -7,7 +7,8 @@ function Users() {
   return (
     <UsersPage>
       <Title>Select user</Title>
-      т.к. мы на странице, с которой будем переходить на user, то в to
+      {/* т.к. мы на странице, с которой будем переходить на user, 
+      то в to можно писать только целевую страницу*/}
       <Link to='user'>Go to User page</Link>
       <Button name="Go to About Page" onClick={()=>{}} />
     </UsersPage>
