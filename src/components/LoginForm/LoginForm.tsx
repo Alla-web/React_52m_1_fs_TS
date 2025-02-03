@@ -6,6 +6,7 @@ import Input from "../Input/Input";
 import { LoginFormContainer, Title, InputsContainer } from "./styles";
 import { LoginFormValues } from "./types";
 import * as Yup from "yup";
+import { ChangeEvent } from "react";
 
 function LoginForm (){
     return(
@@ -32,6 +33,9 @@ function LoginForm() {
   //   setPassword(event.target.value);
   // };
 
+  //минимум 8 символов, специальный символ и хотя бы одна заглавная буква
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
   //------------Создание валидационной схемы с помощью Yup
   //можно назвать эту переменную validationSchema и тогда она автоматически подтянется в стр 62
   //без указания
@@ -42,19 +46,23 @@ function LoginForm() {
       .max(15, "Max 15 symbols")
       .min(5, "Min 5 symbols")
       .typeError("Email must be string"),
-    password: Yup.number()
-      .required("Field password is required")
-      .typeError("Password must be number")
-      .test(
-        "Check min password length",
-        "Min 8 sumbols",
-        (value) => String(value).length >= 10
-      )
-      .test(
-        "Check max] password length",
-        "Max 20 sumbols",
-        (value) => String(value).length <= 20
-      ),
+    // password: Yup.number()
+    //   .required("Field password is required")
+    //   .typeError("Password must be number")
+    //   .test(
+    //     "Check min password length",
+    //     "Min 8 sumbols",
+    //     (value) => String(value).length >= 10
+    //   )
+    //   .test(
+    //     "Check max] password length",
+    //     "Max 20 sumbols",
+    //     (value) => String(value).length <= 20
+    //   ),
+    password: Yup.string()
+    password: Yup.string()
+      .required('Required')
+      .matches(passwordRegex, 'Password must be at least 8 characters long, include uppercase, lowercase and special character')
   });
 
   //-------------Настройка формы под её определённые поля
@@ -84,6 +92,12 @@ function LoginForm() {
 
   console.log(formik);
 
+  //если при изменении только пароль должен проверяться - создаём отдельную логику через event
+  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    formik.setFieldValue('password', event.target.value)
+    formik.validateField('password')
+  }
+
   return (
     //Для выполнения функции, которая прописана в свойстве onSubmit в настройке formik, в атрибут onSubmit
     //для формы передаём formik.handleSubmit
@@ -108,7 +122,8 @@ function LoginForm() {
           name="password"
           label="Password*"
           value={formik.values.password}
-          onChange={formik.handleChange}
+          // onChange={formik.handleChange} - если при изменении только пароль должен проверяться
+          onChange={handlePasswordChange}
           placeholder="Enter your password"
           errorMessage={formik.errors.password}
         />
