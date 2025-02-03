@@ -7,6 +7,17 @@ import { LoginFormContainer, Title, InputsContainer } from "./styles";
 import { LoginFormValues } from "./types";
 import * as Yup from "yup";
 
+function LoginForm (){
+    return(
+        <LoginFormContainer>
+            <Title>Login form</Title>
+            <InputsContainer>
+                <Input name='email' />
+                <Input name='password' />
+            </InputsContainer>
+            <Button/>
+        </LoginFormContainer>
+    );
 function LoginForm() {
   //БУДЕМ КОНТРОЛИРОВАТЬ ФОРМУ ПРИ ПОМОЩИ ФОРМИКА, ПОЭТОМУ КОММЕНТИРУЕМ ПРЕЖНИЙ ВАРИАНТ КОНТРОЛЯ
   // const [email, setEmail] = useState<string>("");

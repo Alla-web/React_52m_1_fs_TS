@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
 
@@ -9,7 +10,8 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson10 from "./lessons/Lesson10/Lesson10";
 // import Lesson11 from "./lessons/Lesson11/Lesson11";
 // import Lesson12 from "lessons/Lesson12/Lesson12";
-// Lesson 13
+
+
 import Layout from "components/Layout/Layout";
 import Home from "pages/Home/Home";
 import About from "pages/About/About";
@@ -22,10 +24,12 @@ import User from "pages/Users/components/User/User";
 //homeworks
 // import Homework08 from "./homeworks/Homework08/Homework08";
 // import Homework09 from "./homeworks/Homework09/Homework09";
+import Homework10 from "./homeworks/Homework10/Homework10";
+
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
-// import Consultation04 from "./consultations/Consultation04/Consultation04";
+// import Consultation04 from "./consultations/Consultation04/Consultation04-05";
 
 function App() {
   return (
@@ -57,6 +61,10 @@ function App() {
       {/* <Homework08/>  */}
       {/* --------------Topic: Control components, useEffect (hoock) */}
       {/* <Lesson09/> */}
+      {/* <Consultation04-05 /> */}
+      {/* --------------Topic: useEffect */}
+      {/* <Lesson10/> */}
+      <Homework10/>
       {/* <Consultation04 /> */}
       {/* <Homework09/> */}
       {/* --------------Topic: useEffect */}
@@ -65,6 +73,7 @@ function App() {
       {/* --------------Topic: formic, yup */}
       {/* <Lesson12/> */}
     </BrowserRouter>
+
   );
 }
 
