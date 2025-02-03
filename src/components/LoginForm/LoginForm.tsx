@@ -34,14 +34,14 @@ function LoginForm() {
 
   //------------Создание валидационной схемы с помощью Yup
   //можно назвать эту переменную validationSchema и тогда она автоматически подтянется в стр 62
-  //без указания 
+  //без указания
   const schema = Yup.object().shape({
     email: Yup.string()
       .required("Field email is required")
       .email("Field has type email")
       .max(15, "Max 15 symbols")
       .min(5, "Min 5 symbols")
-      .typeError("Email ust be string"),
+      .typeError("Email must be string"),
     password: Yup.number()
       .required("Field password is required")
       .typeError("Password must be number")
@@ -62,8 +62,9 @@ function LoginForm() {
   // при вызове useFormik() возвращает объект, в котором хранятся значения из полей, ошибки,
   // и различные методы для работы с формой
 
+  //хук useFormik возвращает объект со значениями полей, функциями и ошибками
   const formik = useFormik({
-    //в объекте 2 обязательных мвойства: initialValues, onSubmit
+    //в объекте 2 обязательных cвойства: initialValues, onSubmit
     // initialValues - это объект, где ключчями являются значения атрибута name input формы, а
     // значениями - значения при первичной загрузке компонента
     initialValues: {

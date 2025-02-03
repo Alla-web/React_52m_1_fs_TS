@@ -1,4 +1,4 @@
-
+import Homework12 from "homeworks/Homework12/Homewrk12";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
 
@@ -11,12 +11,12 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson11 from "./lessons/Lesson11/Lesson11";
 // import Lesson12 from "lessons/Lesson12/Lesson12";
 
-
 import Layout from "components/Layout/Layout";
 import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Users from "pages/Users/Users";
 import User from "pages/Users/components/User/User";
+
 
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
@@ -24,7 +24,11 @@ import User from "pages/Users/components/User/User";
 //homeworks
 // import Homework08 from "./homeworks/Homework08/Homework08";
 // import Homework09 from "./homeworks/Homework09/Homework09";
+
+import EmployeeForm from "components/EmployeeForm/EmployeeForm";
+
 import Homework10 from "./homeworks/Homework10/Homework10";
+
 
 
 //consultations
@@ -64,7 +68,7 @@ function App() {
       {/* <Consultation04-05 /> */}
       {/* --------------Topic: useEffect */}
       {/* <Lesson10/> */}
-      <Homework10/>
+       {/* <Homework10/> */}
       {/* <Consultation04 /> */}
       {/* <Homework09/> */}
       {/* --------------Topic: useEffect */}
@@ -72,8 +76,8 @@ function App() {
       {/* <Lesson11/> */}
       {/* --------------Topic: formic, yup */}
       {/* <Lesson12/> */}
+      <Homework12/>
     </BrowserRouter>
-
   );
 }
 
