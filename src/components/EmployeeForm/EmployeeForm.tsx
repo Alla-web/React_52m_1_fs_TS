@@ -3,7 +3,7 @@ import { EmployeeFormContainer, InputsContainer } from "./styles";
 import Button from "components/Button/Button";
 import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
-import { LoginFormValues } from "components/LoginForm/types";
+import { EmployeeFormValues } from "./types";
 
 function EmployeeForm() {
   const schema = Yup.object().shape({
@@ -23,7 +23,7 @@ function EmployeeForm() {
     age: Yup.number()
       .min(18, "Min 18 symbols")
       .max(80, "Max 80 symbols")
-      .typeError("Age must be number"),
+      .typeError("Age must be number"), 
     jobTitle: Yup.string()
       .test(
         "Check min fullname length",
@@ -33,15 +33,15 @@ function EmployeeForm() {
       .typeError("Jobtitle must be string"),
   });
 
-  const formic = useFormik({
+  const formik = useFormik({
     initialValues: {
       fullName: "",
-      age: 0,
+      age: "",
       jobTitle: "",
-    } as LoginFormValues,
+    } as EmployeeFormValues,
     validationSchema: schema,
     validateOnChange: false,
-    onSubmit: (formInputsValues: LoginFormValues) => {
+    onSubmit: (formInputsValues: EmployeeFormValues) => {
       console.table(formInputsValues);
     },
   });
@@ -55,9 +55,9 @@ function EmployeeForm() {
           name="fullName"
           label="Full Name*"
           placeholder="Enter your fullname"
-          value={formic.values.fullName}
-          onChange={formic.handleChange}
-          errorMessage={formic.errors.fullName}
+          value={formik.values.fullName}
+          onChange={formik.handleChange}
+          errorMessage={formik.errors.fullName}
         />
         <Input
           id="ageInput"
@@ -65,9 +65,9 @@ function EmployeeForm() {
           name="age"
           label="Age*"
           placeholder="Enter your age"
-          value={formic.values.age}
-          onChange={formic.handleChange}
-          errorMessage={formic.errors.age}
+          value={formik.values.age}
+          onChange={formik.handleChange}
+          errorMessage={formik.errors.age}
         />
         <Input
           id="jobTitleInput"
@@ -75,9 +75,9 @@ function EmployeeForm() {
           name="jobTitle"
           label="Job Title"
           placeholder="Enter your jobtitle"
-          value={formic.values.jobTitle}
-          onChange={formic.handleChange}
-          errorMessage={formic.errors.jobTitle}
+          value={formik.values.jobTitle}
+          onChange={formik.handleChange}
+          errorMessage={formik.errors.jobTitle}
         />
       </InputsContainer>
       <Button name="Create" type="submit"/>
