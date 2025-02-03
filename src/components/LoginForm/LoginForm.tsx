@@ -30,7 +30,7 @@ function LoginForm() {
       .email("Field has type email")
       .max(15, "Max 15 symbols")
       .min(5, "Min 5 symbols")
-      .typeError("Email ust be string"),
+      .typeError("Email must be string"),
     password: Yup.number()
       .required("Field password is required")
       .typeError("Password must be number")
@@ -52,7 +52,7 @@ function LoginForm() {
   // и различные методы для работы с формой
 
   const formik = useFormik({
-    //в объекте 2 обязательных мвойства: initialValues, onSubmit
+    //в объекте 2 обязательных cвойства: initialValues, onSubmit
     // initialValues - это объект, где ключчями являются значения атрибута name input формы, а
     // значениями - значения при первичной загрузке компонента
     initialValues: {

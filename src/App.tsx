@@ -9,13 +9,13 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson11 from "./lessons/Lesson11/Lesson11";
 // import Lesson12 from "lessons/Lesson12/Lesson12";
 
-
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
 
 //homeworks
 // import Homework08 from "./homeworks/Homework08/Homework08";
 // import Homework09 from "./homeworks/Homework09/Homework09";
+import EmployeeForm from "components/EmployeeForm/EmployeeForm";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
@@ -43,6 +43,7 @@ function App() {
       {/* <Lesson11/> */}
       {/* --------------Topic: formic, yup */}
       {/* <Lesson12/> */}
+      <EmployeeForm />
     </>
   );
 }
