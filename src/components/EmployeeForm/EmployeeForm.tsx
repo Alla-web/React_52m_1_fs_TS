@@ -1,34 +1,34 @@
-import Input from "components/Input/Input";
 import { EmployeeFormContainer, InputsContainer } from "./styles";
+import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import { EmployeeFormValues } from "./types";
 
 function EmployeeForm() {
-  const schema = Yup.object().shape({
+  const validationSchema = Yup.object().shape({
     fullName: Yup.string()
       .required("Field fullname is required")
       .test(
         "Check min fullname length",
         "Min 5 sumbols",
-        (value) => String(value).length < 5
+        (value) => String(value).length >= 5
       )
       .test(
-        "Check min fullname length",
+        "Check max fullname length",
         "Max 50 sumbols",
-        (value) => String(value).length > 50
+        (value) => String(value).length <= 50
       )
       .typeError("Fullname must be string"),
     age: Yup.number()
       .min(18, "Min 18 symbols")
       .max(80, "Max 80 symbols")
-      .typeError("Age must be number"), 
+      .typeError("Age must be number"),
     jobTitle: Yup.string()
       .test(
-        "Check min fullname length",
+        "Check max fullname length",
         "Max 30 sumbols",
-        (value) => String(value).length > 30
+        (value) => String(value).length <= 30
       )
       .typeError("Jobtitle must be string"),
   });
@@ -38,8 +38,9 @@ function EmployeeForm() {
       fullName: "",
       age: "",
       jobTitle: "",
+      agreement: false,
     } as EmployeeFormValues,
-    validationSchema: schema,
+    validationSchema,
     validateOnChange: false,
     onSubmit: (formInputsValues: EmployeeFormValues) => {
       console.table(formInputsValues);
@@ -47,7 +48,7 @@ function EmployeeForm() {
   });
 
   return (
-    <EmployeeFormContainer>
+    <EmployeeFormContainer onSubmit={formik.handleSubmit}>
       <InputsContainer>
         <Input
           id="fullNameInput"
@@ -61,7 +62,7 @@ function EmployeeForm() {
         />
         <Input
           id="ageInput"
-          type="number"
+        //   type="number"
           name="age"
           label="Age*"
           placeholder="Enter your age"
@@ -80,7 +81,7 @@ function EmployeeForm() {
           errorMessage={formik.errors.jobTitle}
         />
       </InputsContainer>
-      <Button name="Create" type="submit"/>
+      <Button name="CREATE" type="submit" />
     </EmployeeFormContainer>
   );
 }

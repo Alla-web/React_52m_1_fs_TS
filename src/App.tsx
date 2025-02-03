@@ -1,3 +1,4 @@
+import Homework12 from "homeworks/Homework12/Homewrk12";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //lessons
@@ -43,7 +44,7 @@ function App() {
       {/* <Lesson11/> */}
       {/* --------------Topic: formic, yup */}
       {/* <Lesson12/> */}
-      <EmployeeForm />
+      <Homework12/>
     </>
   );
 }

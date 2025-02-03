@@ -23,7 +23,7 @@ function LoginForm() {
 
   //------------Создание валидационной схемы с помощью Yup
   //можно назвать эту переменную validationSchema и тогда она автоматически подтянется в стр 62
-  //без указания 
+  //без указания
   const schema = Yup.object().shape({
     email: Yup.string()
       .required("Field email is required")
@@ -51,6 +51,7 @@ function LoginForm() {
   // при вызове useFormik() возвращает объект, в котором хранятся значения из полей, ошибки,
   // и различные методы для работы с формой
 
+  //хук useFormik возвращает объект со значениями полей, функциями и ошибками
   const formik = useFormik({
     //в объекте 2 обязательных cвойства: initialValues, onSubmit
     // initialValues - это объект, где ключчями являются значения атрибута name input формы, а

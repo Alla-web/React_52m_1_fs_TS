@@ -25,3 +25,6 @@ gap: 10px;
 width: 100%;
 `
 
+export const CheckboxContainer = styled.div`
+`
+
