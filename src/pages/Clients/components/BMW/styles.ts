@@ -8,6 +8,9 @@ export const BmwPage = styled.div`
   padding: 20px;
   font-size: 30px;
   `
+  export const LogoImg = styled.img`
+  width: 150px;
+  `
 
 export const BmwTitle = styled.h1`
  font-size: 36px;

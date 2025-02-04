@@ -1,15 +1,5 @@
-import Homework12 from "homeworks/Homework12/Homewrk12";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
-
-//lessons
-// import Lesson06 from "./lessons/lesson06/Lesson06";
-// import Lesson07 from "./lessons/Lesson07/Lesson07";
-// import Lesson08 from "./lessons/Lesson08/Lesson08";
-// import Lesson09 from "lessons/Lesson09/Lesson09";
-// import Lesson10 from "./lessons/Lesson10/Lesson10";
-// import Lesson11 from "./lessons/Lesson11/Lesson11";
-// import Lesson12 from "lessons/Lesson12/Lesson12";
 
 import Layout from "components/Layout/Layout";
 import Home from "pages/Home/Home";
@@ -21,6 +11,16 @@ import BmwCompany from "pages/Clients/components/BMW/BMW";
 import FerrariCompany from "pages/Clients/components/Ferrari/Ferrari";
 import VwCompany from "pages/Clients/components/VW/VW";
 
+//lessons
+// import Lesson06 from "./lessons/lesson06/Lesson06";
+// import Lesson07 from "./lessons/Lesson07/Lesson07";
+// import Lesson08 from "./lessons/Lesson08/Lesson08";
+// import Lesson09 from "lessons/Lesson09/Lesson09";
+// import Lesson10 from "./lessons/Lesson10/Lesson10";
+// import Lesson11 from "./lessons/Lesson11/Lesson11";
+// import Lesson12 from "lessons/Lesson12/Lesson12";
+import Lesson14 from "lessons/Lesson14/Lesson14";
+
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
 
@@ -29,10 +29,12 @@ import VwCompany from "pages/Clients/components/VW/VW";
 // import Homework09 from "./homeworks/Homework09/Homework09";
 // import Homework10 from "./homeworks/Homework10/Homework10";
 // import EmployeeForm from "components/EmployeeForm/EmployeeForm";
+// import Homework12 from "homeworks/Homework12/Homewrk12";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
 // import Consultation04 from "./consultations/Consultation04/Consultation04-05";
+import Consultation06 from "consultations/Consultation06/Consultation06";
 
 function App() {
   return (
@@ -43,18 +45,22 @@ function App() {
       <Layout>
         {/* Routes - собирает все маршруты приложения  */}
         <Routes>
-        {/* Route - компонент, который передается в маршрут и контент, который 
+          {/* Route - компонент, который передается в маршрут и контент, который 
         нужно отрендерить (отрисовать) по этому маршруту*/}
-          <Route>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/about" element={<About/>}/>
-            <Route path="/users" element={<Users/>}/>
-            <Route path="/users/user" element={<User/>}></Route>
-            <Route path="/clients" element={<Clients/>}/>
-            <Route path="/clients/BMW" element={<BmwCompany/>}></Route>
-            <Route path="/clients/Ferrari" element={<FerrariCompany/>}></Route>
-            <Route path="/clients/VW" element={<VwCompany/>}></Route>
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/user" element={<User />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/BMW" element={<BmwCompany />} />
+          <Route path="/clients/Ferrari" element={<FerrariCompany />} />
+          <Route path="/clients/VW" element={<VwCompany />} />
+          {/* --------------Topic: hoock useContext */}
+          <Route path="/lesson14" element={<Lesson14 />} />
+          <Route path="/consultation06" element={<Consultation06 />} />
+          {/* Для избежания ошибок при рукоблудстве пользователя в троке веб-адреса
+            Route* - этот routе показывает контент, если маршрута не существует  в перечисленных выше.*/}
+          <Route path="*" element="Page not found" />
         </Routes>
       </Layout>
       {/* --------------Topic: TypeScript Introduction */}

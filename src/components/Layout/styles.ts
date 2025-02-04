@@ -26,7 +26,7 @@ export const LogoContainer = styled.div`
 
 export const NavContainer = styled.nav`
   display: flex;
-  gap: 15px;
+  gap: 20px;
 `;
 
 export const Main = styled.main`
@@ -45,6 +45,7 @@ export const Footer = styled.footer`
   color: white;
 `;
 
+//стилизация ссылки при переходе по этой ссылке
 export const StyledNavLink = styled(NavLink)`
 text-decoration: none;
 font-size: 20px;

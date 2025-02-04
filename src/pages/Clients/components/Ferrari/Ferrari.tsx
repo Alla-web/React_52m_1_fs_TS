@@ -1,8 +1,9 @@
-import { FerrariPage, FerrariTitle, AboutFerrari } from "./styles";
+import { FerrariPage, FerrariTitle, AboutFerrari, LogoImg } from "./styles";
 
 function FerrariCompany() {
   return (
     <FerrariPage>
+      <LogoImg src="https://upload.wikimedia.org/wikipedia/sco/d/d1/Ferrari-Logo.svg"/>
       <FerrariTitle>Ferrari</FerrariTitle>
       <AboutFerrari>
         Ferrari is an Italian company producing sports and racing cars,
