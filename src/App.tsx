@@ -16,7 +16,10 @@ import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Users from "pages/Users/Users";
 import User from "pages/Users/components/User/User";
-
+import Clients from "pages/Clients/Clients";
+import BmwCompany from "pages/Clients/components/BMW/BMW";
+import FerrariCompany from "pages/Clients/components/Ferrari/Ferrari";
+import VwCompany from "pages/Clients/components/VW/VW";
 
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
@@ -47,6 +50,10 @@ function App() {
             <Route path="/about" element={<About/>}/>
             <Route path="/users" element={<Users/>}/>
             <Route path="/users/user" element={<User/>}></Route>
+            <Route path="/clients" element={<Clients/>}/>
+            <Route path="/clients/BMW" element={<BmwCompany/>}></Route>
+            <Route path="/clients/Ferrari" element={<FerrariCompany/>}></Route>
+            <Route path="/clients/VW" element={<VwCompany/>}></Route>
           </Route>
         </Routes>
       </Layout>
