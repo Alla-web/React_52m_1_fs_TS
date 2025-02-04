@@ -21,7 +21,6 @@ import BmwCompany from "pages/Clients/components/BMW/BMW";
 import FerrariCompany from "pages/Clients/components/Ferrari/Ferrari";
 import VwCompany from "pages/Clients/components/VW/VW";
 
-
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
 
