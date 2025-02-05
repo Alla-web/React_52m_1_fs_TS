@@ -82,6 +82,7 @@ function Layout({ children }: LayoutProps) {
           >
             HW 14  
           </StyledNavLink>
+          {/* //можно сздать отдельный компонент и в него передавть пропсами to, style, и  имя */}
         </NavContainer>
       </Header>
       <Main>{children}</Main>

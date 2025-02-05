@@ -10,7 +10,7 @@ export const BlogManagementContainer = styled.div`
   border: 2px solid black;
   border-radius: 4px;
   padding: 40px;
-  background-color: white;
+  background-color: #fcca46;
 `;
 
 

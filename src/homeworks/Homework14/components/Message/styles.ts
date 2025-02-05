@@ -8,10 +8,12 @@ gap: 15px;
 border: 2px solid black;
 border-radius: 4px;
 padding: 20px;
+background-color: aliceblue;
 `
 
 export const MessageItem = styled.p`
 padding: 20px;
 width: 100%;
+
 `
 
