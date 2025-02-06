@@ -1,6 +1,6 @@
 import Button from "components/Button/Button";
 import {
-    DeleteAlEmployeesButtonContainer,
+  DeleteAlEmployeesButtonContainer,
   DeleteButtonContainer,
   EmployeeCardContainer,
   EmployeeCardsWrapper,
@@ -9,56 +9,46 @@ import {
   StringTitle,
   TitleValueContainer,
 } from "./styles";
+import { useContext } from "react";
+import { EmployeeDataContext } from "components/EmployeeLayout/EmployeeLayout";
 
 function Employee() {
+  const { employeeData, setEmployeeData } = useContext(EmployeeDataContext);
+
+  //логика удаления данных
+  const onDeleteData = () => {
+    setEmployeeData(undefined);
+  };
+
   return (
     <EmployeeContainer>
       <EmployeeCardsWrapper>
-        <EmployeeCardContainer>
+        {employeeData && (
+          <EmployeeCardContainer>
             <TitleValueContainer>
-                <StringTitle>Name</StringTitle>
-                <StingValue>Alla</StingValue>
+              <StringTitle>Name</StringTitle>
+              <StingValue>{employeeData.name}</StingValue>
             </TitleValueContainer>
             <TitleValueContainer>
-                <StringTitle>Surname</StringTitle>
-                <StingValue>Alla</StingValue>
+              <StringTitle>Surname</StringTitle>
+              <StingValue>{employeeData.surname}</StingValue>
             </TitleValueContainer>
             <TitleValueContainer>
-                <StringTitle>Age</StringTitle>
-                <StingValue>41</StingValue>
+              <StringTitle>Age</StringTitle>
+              <StingValue>{employeeData.age}</StingValue>
             </TitleValueContainer>
             <TitleValueContainer>
-                <StringTitle>Job position</StringTitle>
-                <StingValue>WebDeveloper</StingValue>
+              <StringTitle>Job position</StringTitle>
+              <StingValue>{employeeData.jobPosition}</StingValue>
             </TitleValueContainer>
-          <DeleteButtonContainer>
-            <Button name="DELETE" isRed />
-          </DeleteButtonContainer>
-        </EmployeeCardContainer>     
-        <EmployeeCardContainer>
-            <TitleValueContainer>
-                <StringTitle>Name</StringTitle>
-                <StingValue>Alla</StingValue>
-            </TitleValueContainer>
-            <TitleValueContainer>
-                <StringTitle>Surname</StringTitle>
-                <StingValue>Alla</StingValue>
-            </TitleValueContainer>
-            <TitleValueContainer>
-                <StringTitle>Age</StringTitle>
-                <StingValue>40</StingValue>
-            </TitleValueContainer>
-            <TitleValueContainer>
-                <StringTitle>Job position</StringTitle>
-                <StingValue>WebDeveloper</StingValue>
-            </TitleValueContainer>
-          <DeleteButtonContainer>
-            <Button name="DELETE" isRed />
-          </DeleteButtonContainer>
-        </EmployeeCardContainer>
+            <DeleteButtonContainer>
+              <Button name="DELETE" isRed onClick={onDeleteData} />
+            </DeleteButtonContainer>
+          </EmployeeCardContainer>
+        )}
       </EmployeeCardsWrapper>
       <DeleteAlEmployeesButtonContainer>
-        <Button name="REMOOVE AL EMPLOYEES" isRed />
+        <Button name="REMOOVE AL EMPLOYEES" isRed onClick={}/>
       </DeleteAlEmployeesButtonContainer>
     </EmployeeContainer>
   );

@@ -1,5 +1,11 @@
-import { ReactNode } from "react";
+import { EmployeeDataTypes } from "lessons/Lesson15/CreateEmployee/types";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 
 export interface EmployeeLayoutProps {
-    children: ReactNode
+  children: ReactNode;
+}
+
+export interface EmployeeDataContextType {
+  employee: EmployeeDataTypes | undefined;
+  addEmployee: Dispatch<SetStateAction<EmployeeDataTypes>> | (() => void);
 }

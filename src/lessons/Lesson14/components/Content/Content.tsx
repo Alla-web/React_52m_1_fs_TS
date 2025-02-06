@@ -22,9 +22,9 @@ const onDeleteData = ()=>{
 
   return (
     <ContentComponent>
-      <DataItem>First Name: {data? data?.firstName : ' - '}</DataItem>
+      <DataItem>First Name: {data ? data?.firstName : ' - '}</DataItem>
       <DataItem>Last Name: {data ? data?.lastName: ' - '}</DataItem>
-      <DataItem>Age: {data? data?.age :  ' - '}</DataItem>
+      <DataItem>Age: {data ? data?.age :  ' - '}</DataItem>
       <Button name='CLEAR DATA' onClick={onDeleteData}/>
     </ContentComponent>
   )

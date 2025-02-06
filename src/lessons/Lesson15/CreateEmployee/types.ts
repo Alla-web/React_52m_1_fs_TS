@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react"
 
 export interface EmployeeDataTypes {
     // id: number,
@@ -6,9 +5,4 @@ export interface EmployeeDataTypes {
     surname: string,
     age: string,
     jobPosition?: string
-}
-
-export interface EmployeeContextType {
-    employee: EmployeeDataTypes[],
-    addEmployee: Dispatch<SetStateAction<EmployeeDataTypes[]>> | (()=> void)
 }

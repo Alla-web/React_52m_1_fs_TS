@@ -9,8 +9,18 @@ import Button from "components/Button/Button";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { EmployeeDataTypes } from "./types";
+import { ChangeEvent, useEffect, useState } from "react";
+import { v4 } from "uuid";
 
 function CreateEmployee() {
+  //контроль значений осуществляется через useFormik, значит
+  // нам не нужно создавать стейты и функции для изменения значений при изменении инпутов
+
+  //создаём стейт для хранения передаваемых в форму значений инпутов
+  const [employeeData, setEmployeeData] = useState<
+    EmployeeDataTypes | undefined
+  >();
+
   //валидация формы при помощи formic
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -55,7 +65,7 @@ function CreateEmployee() {
       ),
   });
 
-  const formic = useFormik({
+  const formik = useFormik({
     initialValues: {
       name: "",
       surname: "",
@@ -65,13 +75,28 @@ function CreateEmployee() {
     validationSchema,
     validateOnChange: false,
     onSubmit: (formInputValues: EmployeeDataTypes) => {
-      console.table(formInputValues);
+       // Устанавливаем данные формы в стейт
+      setEmployeeData({
+        name: formInputValues.name,
+        surname: formInputValues.surname,
+        age: formInputValues.age,
+        jobPosition: formInputValues.jobPosition,
+      });
+      // console.table(formInputValues);      
+      formik.resetForm();
     },
   });
 
+  //проверяем наполнился ли стейт данными из формы
+  useEffect(()=>{
+    if (employeeData) {
+      console.log(employeeData);          
+    }
+  }, [employeeData]);  
+
   return (
-    <CreateEmployeeContainer>
-      <EmployeeForm onSubmit={formic.handleSubmit}>
+    <CreateEmployeeContainer id={v4()}>
+      <EmployeeForm onSubmit={formik.handleSubmit}>
         <InputsContainer>
           <Input
             id="name_id"
@@ -79,9 +104,9 @@ function CreateEmployee() {
             type="text"
             label="Name*"
             placeholder="Enter your name"
-            value={formic.values.name}
-            onChange={formic.handleChange}
-            errorMessage={formic.errors.name}
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            errorMessage={formik.errors.name}
           />
           <Input
             id="surname_id"
@@ -89,9 +114,9 @@ function CreateEmployee() {
             type="text"
             label="Surname*"
             placeholder="Enter your surname"
-            value={formic.values.surname}
-            onChange={formic.handleChange}
-            errorMessage={formic.errors.surname}
+            value={formik.values.surname}
+            onChange={formik.handleChange}
+            errorMessage={formik.errors.surname}
           />
           <Input
             id="age_id"
@@ -99,9 +124,9 @@ function CreateEmployee() {
             type="number"
             label="Age*"
             placeholder="Enter your age"
-            value={formic.values.age}
-            onChange={formic.handleChange}
-            errorMessage={formic.errors.age}
+            value={formik.values.age}
+            onChange={formik.handleChange}
+            errorMessage={formik.errors.age}
           />
           <Input
             id="jobPosition_id"
@@ -109,9 +134,9 @@ function CreateEmployee() {
             type="text"
             label="Job Position"
             placeholder="Enter your job position"
-            value={formic.values.jobPosition}
-            onChange={formic.handleChange}
-            errorMessage={formic.errors.jobPosition}
+            value={formik.values.jobPosition}
+            onChange={formik.handleChange}
+            errorMessage={formik.errors.jobPosition}
           />
         </InputsContainer>
         <ButtonContainer>
@@ -120,9 +145,9 @@ function CreateEmployee() {
             type="submit"
             disabled={
               !(
-                formic.values.name &&
-                formic.values.surname &&
-                formic.values.age
+                formik.values.name &&
+                formik.values.surname &&
+                formik.values.age
               )
             }
           />
