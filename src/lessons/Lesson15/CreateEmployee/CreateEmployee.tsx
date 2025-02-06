@@ -9,17 +9,12 @@ import Button from "components/Button/Button";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { EmployeeDataTypes } from "./types";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect} from "react";
 import { v4 } from "uuid";
 
 function CreateEmployee() {
   //контроль значений осуществляется через useFormik, значит
   // нам не нужно создавать стейты и функции для изменения значений при изменении инпутов
-
-  //создаём стейт для хранения передаваемых в форму значений инпутов
-  const [employeeData, setEmployeeData] = useState<
-    EmployeeDataTypes | undefined
-  >();
 
   //валидация формы при помощи formic
   const validationSchema = Yup.object().shape({
@@ -88,11 +83,11 @@ function CreateEmployee() {
   });
 
   //проверяем наполнился ли стейт данными из формы
-  useEffect(()=>{
-    if (employeeData) {
-      console.log(employeeData);          
-    }
-  }, [employeeData]);  
+  // useEffect(()=>{
+  //   if (employeeData) {
+  //     console.log(employeeData);          
+  //   }
+  // }, [employeeData]);  
 
   return (
     <CreateEmployeeContainer id={v4()}>

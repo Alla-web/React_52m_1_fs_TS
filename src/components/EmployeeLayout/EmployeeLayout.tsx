@@ -10,7 +10,13 @@ import {
 import { EmployeeDataContextType, EmployeeLayoutProps } from "./types";
 import LogoFoto from "../../assets/Foto/logo.lesson15.jpg";
 import { Link } from "react-router-dom";
-import { createContext } from "react";
+import { createContext, useState } from "react";
+import { EmployeeDataTypes } from "lessons/Lesson15/CreateEmployee/types";
+
+//создаём стейт для хранения передаваемых в форму значений инпутов
+const [employeeData, setEmployeeData] = useState<
+  EmployeeDataTypes | undefined
+>();
 
 //создаём и экспортируем контекст
 export const EmployeeDataContext = createContext<EmployeeDataContextType>({
