@@ -9,10 +9,17 @@ import Button from "components/Button/Button";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { EmployeeDataTypes } from "./types";
-import { useEffect} from "react";
+import { useEffect, useContext } from "react";
 import { v4 } from "uuid";
+import { EmployeeDataContext } from "components/EmployeeLayout/EmployeeLayout";
 
 function CreateEmployee() {
+  const employee = useContext(EmployeeDataContext);
+  console.log(employee);
+
+  //достаем только функцию из контекста
+  const { setEmployeeData } = employee;
+
   //контроль значений осуществляется через useFormik, значит
   // нам не нужно создавать стейты и функции для изменения значений при изменении инпутов
 
@@ -70,14 +77,14 @@ function CreateEmployee() {
     validationSchema,
     validateOnChange: false,
     onSubmit: (formInputValues: EmployeeDataTypes) => {
-       // Устанавливаем данные формы в стейт
+      // Устанавливаем данные формы в стейт
       setEmployeeData({
         name: formInputValues.name,
         surname: formInputValues.surname,
         age: formInputValues.age,
         jobPosition: formInputValues.jobPosition,
       });
-      // console.table(formInputValues);      
+      // console.table(formInputValues);
       formik.resetForm();
     },
   });
@@ -85,9 +92,9 @@ function CreateEmployee() {
   //проверяем наполнился ли стейт данными из формы
   // useEffect(()=>{
   //   if (employeeData) {
-  //     console.log(employeeData);          
+  //     console.log(employeeData);
   //   }
-  // }, [employeeData]);  
+  // }, [employeeData]);
 
   return (
     <CreateEmployeeContainer id={v4()}>

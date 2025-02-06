@@ -13,23 +13,24 @@ import { Link } from "react-router-dom";
 import { createContext, useState } from "react";
 import { EmployeeDataTypes } from "lessons/Lesson15/CreateEmployee/types";
 
-//создаём стейт для хранения передаваемых в форму значений инпутов
-const [employeeData, setEmployeeData] = useState<
-  EmployeeDataTypes | undefined
->();
-
 //создаём и экспортируем контекст
 export const EmployeeDataContext = createContext<EmployeeDataContextType>({
   employee: undefined,
-  addEmployee: () => {},
+  setEmployeeData: () => {},
 });
 
 function EmployeeLayout({ children }: EmployeeLayoutProps) {
+
+  //создаём стейт для хранения передаваемых в форму значений инпутов
+  const [employeeData, setEmployeeData] = useState<
+    EmployeeDataTypes | undefined
+  >();
+
   return (
     <EmployeeDataContext.Provider
       value={{
         employee: employeeData,
-        addEmployee: setEmployeeData,
+        setEmployeeData: setEmployeeData,
       }}
     >
       <EmployeeLayoutComponent>

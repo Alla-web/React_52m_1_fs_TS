@@ -13,7 +13,7 @@ import { useContext } from "react";
 import { EmployeeDataContext } from "components/EmployeeLayout/EmployeeLayout";
 
 function Employee() {
-  const { employeeData, setEmployeeData } = useContext(EmployeeDataContext);
+  const { employee, setEmployeeData } = useContext(EmployeeDataContext);
 
   //логика удаления данных
   const onDeleteData = () => {
@@ -23,23 +23,23 @@ function Employee() {
   return (
     <EmployeeContainer>
       <EmployeeCardsWrapper>
-        {employeeData && (
+        {employee && (
           <EmployeeCardContainer>
             <TitleValueContainer>
               <StringTitle>Name</StringTitle>
-              <StingValue>{employeeData.name}</StingValue>
+              <StingValue>{employee.name}</StingValue>
             </TitleValueContainer>
             <TitleValueContainer>
               <StringTitle>Surname</StringTitle>
-              <StingValue>{employeeData.surname}</StingValue>
+              <StingValue>{employee.surname}</StingValue>
             </TitleValueContainer>
             <TitleValueContainer>
               <StringTitle>Age</StringTitle>
-              <StingValue>{employeeData.age}</StingValue>
+              <StingValue>{employee.age}</StingValue>
             </TitleValueContainer>
             <TitleValueContainer>
               <StringTitle>Job position</StringTitle>
-              <StingValue>{employeeData.jobPosition}</StingValue>
+              <StingValue>{employee.jobPosition}</StingValue>
             </TitleValueContainer>
             <DeleteButtonContainer>
               <Button name="DELETE" isRed onClick={onDeleteData} />
@@ -48,7 +48,7 @@ function Employee() {
         )}
       </EmployeeCardsWrapper>
       <DeleteAlEmployeesButtonContainer>
-        <Button name="REMOOVE AL EMPLOYEES" isRed onClick={}/>
+        <Button name="REMOOVE AL EMPLOYEES" isRed onClick={()=>{}}/>
       </DeleteAlEmployeesButtonContainer>
     </EmployeeContainer>
   );

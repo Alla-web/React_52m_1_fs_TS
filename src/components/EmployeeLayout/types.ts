@@ -7,5 +7,5 @@ export interface EmployeeLayoutProps {
 
 export interface EmployeeDataContextType {
   employee: EmployeeDataTypes | undefined;
-  addEmployee: Dispatch<SetStateAction<EmployeeDataTypes>> | (() => void);
+  setEmployeeData: Dispatch<SetStateAction<EmployeeDataTypes | undefined>>;
 }
