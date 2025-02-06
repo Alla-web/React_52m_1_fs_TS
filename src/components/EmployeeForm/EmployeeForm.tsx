@@ -1,4 +1,10 @@
-import { Checkbox, CheckboxContainer, CheckboxLabel, EmployeeFormContainer, InputsContainer } from "./styles";
+import {
+  Checkbox,
+  CheckboxContainer,
+  CheckboxLabel,
+  EmployeeFormContainer,
+  InputsContainer,
+} from "./styles";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import { Formik, useFormik } from "formik";
@@ -7,6 +13,7 @@ import { EmployeeFormValues } from "./types";
 
 function EmployeeForm() {
   const validationSchema = Yup.object().shape({
+    //список полей с названием из атрибута name инпутов в форме
     fullName: Yup.string()
       .required("Field fullname is required")
       .test(
@@ -19,11 +26,11 @@ function EmployeeForm() {
         "Max 50 sumbols",
         (value) => String(value).length <= 50
       ),
-      // .typeError("Fullname must be string") - для строк не обязательно
+    // .typeError("Fullname must be string") - для строк не обязательно
     age: Yup.number()
       .required("Age is required fild")
-      .min(18, "Min 18 symbols")
-      .max(80, "Max 80 symbols")
+      .min(18, "Min age is 18 year")
+      .max(80, "Max age is 80 year")
       .typeError("Age must be number"),
     jobTitle: Yup.string()
       .test(
@@ -35,6 +42,7 @@ function EmployeeForm() {
   });
 
   const formik = useFormik({
+    //задаём первоначальные значения
     initialValues: {
       fullName: "",
       age: "",
@@ -63,7 +71,7 @@ function EmployeeForm() {
         />
         <Input
           id="ageInput"
-        //   type="number"
+          //   type="number"
           name="age"
           label="Age*"
           placeholder="Enter your age"
@@ -89,18 +97,18 @@ function EmployeeForm() {
         checked={formik.values.agreement}
         onChange={formik.handleChange}
         /> */}
-      </InputsContainer> 
-     <CheckboxContainer>
-      <Checkbox
-      type="checkbox"
-      id="checkboxInput"
-      name="agreement"
-      checked={formik.values.agreement}
-      onChange={formik.handleChange}
-      />      
-      <CheckboxLabel htmlFor="checkboxInput">I agree</CheckboxLabel>
-     </CheckboxContainer>
-      <Button name="CREATE" type="submit" disabled={!formik.values.agreement}/>
+      </InputsContainer>
+      <CheckboxContainer>
+        <Checkbox
+          type="checkbox"
+          id="checkboxInput"
+          name="agreement"
+          checked={formik.values.agreement}
+          onChange={formik.handleChange}
+        />
+        <CheckboxLabel htmlFor="checkboxInput">I agree</CheckboxLabel>
+      </CheckboxContainer>
+      <Button name="CREATE" type="submit" disabled={!formik.values.agreement} />
     </EmployeeFormContainer>
   );
 }
