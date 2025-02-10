@@ -20,6 +20,10 @@ import VwCompany from "pages/Clients/components/VW/VW";
 // import Lesson11 from "./lessons/Lesson11/Lesson11";
 // import Lesson12 from "lessons/Lesson12/Lesson12";
 import Lesson14 from "lessons/Lesson14/Lesson14";
+//Lesson15
+// import EmployeeLayout from "components/EmployeeLayout/EmployeeLayout";
+// import CreateEmployee from "lessons/Lesson15/CreateEmployee/CreateEmployee";
+// import Employees from "lessons/Lesson15/Employees/Employees";
 
 //selflearning
 // import Selflearning07 from "./lessons/Lesson07/Selflearning07";
@@ -43,9 +47,13 @@ function App() {
     //BrowserRouter - компонет из react-router-dom, который позволяет работать с маршрутами
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
-        {/* Routes - собирает все маршруты приложения  */}
+      {/* <EmployeeLayout>
         <Routes>
+
+          <Route path="/createEmployee" element={<CreateEmployee />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="*" element='No pages found'/>
+
           {/* Route - компонент, который передается в маршрут и контент, который 
         нужно отрендерить (отрисовать) по этому маршруту*/}
           <Route path="/" element={<Home />} />
@@ -63,7 +71,29 @@ function App() {
           {/* Для избежания ошибок при рукоблудстве пользователя в троке веб-адреса
             Route* - этот routе показывает контент, если маршрута не существует  в перечисленных выше.*/}
           <Route path="*" element="Page not found" />
+
         </Routes>
+      </EmployeeLayout> */}
+      <Layout>
+      {/* Routes - собирает все маршруты приложения  */}
+      <Routes>
+      {/* Route - компонент, который передается в маршрут и контент, который 
+        нужно отрендерить (отрисовать) по этому маршруту*/}
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/users" element={<Users />} />
+      <Route path="/users/user" element={<User />} />
+      <Route path="/clients" element={<Clients />} />
+      <Route path="/clients/BMW" element={<BmwCompany />} />
+      <Route path="/clients/Ferrari" element={<FerrariCompany />} />
+      <Route path="/clients/VW" element={<VwCompany />} />
+      {/* --------------Topic: hoock useContext */}
+      <Route path="/lesson14" element={<Lesson14 />} />
+      <Route path="/consultation06" element={<Consultation06 />} />
+      {/* Для избежания ошибок при рукоблудстве пользователя в троке веб-адреса
+            // Route* - этот routе показывает контент, если маршрута не существует  в перечисленных выше.*/}
+      <Route path="*" element="Page not found" />
+      </Routes>
       </Layout>
       {/* --------------Topic: TypeScript Introduction */}
       {/* <Lesson06 /> */}

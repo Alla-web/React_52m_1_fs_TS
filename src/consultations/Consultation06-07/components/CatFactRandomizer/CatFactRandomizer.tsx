@@ -26,6 +26,7 @@ export const CatFactRandomizerContext =
 
 function CatFactRandomizer() {
   const [catFactData, setCatFactData] = useState<CatFactDataInterface[]>([]);
+  
   const CATFACT_URL = "https://catfact.ninja/fact";
 
   const getCatFact = async () => {
