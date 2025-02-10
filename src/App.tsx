@@ -34,6 +34,7 @@ import Lesson14 from "lessons/Lesson14/Lesson14";
 // import Homework10 from "./homeworks/Homework10/Homework10";
 // import EmployeeForm from "components/EmployeeForm/EmployeeForm";
 // import Homework12 from "homeworks/Homework12/Homewrk12";
+import Homework14 from "homeworks/Homework14/Homework14";
 
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
@@ -48,9 +49,29 @@ function App() {
       <GlobalStyles />
       {/* <EmployeeLayout>
         <Routes>
+
           <Route path="/createEmployee" element={<CreateEmployee />} />
           <Route path="/employees" element={<Employees />} />
           <Route path="*" element='No pages found'/>
+
+          {/* Route - компонент, который передается в маршрут и контент, который 
+        нужно отрендерить (отрисовать) по этому маршруту*/}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/user" element={<User />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/BMW" element={<BmwCompany />} />
+          <Route path="/clients/Ferrari" element={<FerrariCompany />} />
+          <Route path="/clients/VW" element={<VwCompany />} />
+          {/* --------------Topic: hoock useContext */}
+          <Route path="/lesson14" element={<Lesson14 />} />
+          <Route path="/consultation06" element={<Consultation06 />} />
+          <Route path="/homework14" element={<Homework14 />}/>
+          {/* Для избежания ошибок при рукоблудстве пользователя в троке веб-адреса
+            Route* - этот routе показывает контент, если маршрута не существует  в перечисленных выше.*/}
+          <Route path="*" element="Page not found" />
+
         </Routes>
       </EmployeeLayout> */}
       <Layout>

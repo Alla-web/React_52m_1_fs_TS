@@ -6,6 +6,7 @@ import { UserData } from "./types"
 import { MainCardContextType } from "./types"
 
 //Шаг 1. Создаём хранилище - контекст, с помощью функции createContext
+//в скобках и фигурных скобках начальные значения
 // необходимо сделать экспорт, чтобы затем использовать для создания
 export const MainCardContext = createContext<MainCardContextType>({
   data: undefined,

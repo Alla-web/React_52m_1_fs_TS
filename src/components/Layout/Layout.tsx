@@ -74,6 +74,15 @@ function Layout({ children }: LayoutProps) {
           >
             Consultation 6
           </StyledNavLink>
+          <StyledNavLink
+          to="/homework14"
+          style={({isActive})=>({
+            textDecoration: isActive ? "underline" : "none"
+          })}
+          >
+            HW 14  
+          </StyledNavLink>
+          {/* //можно сздать отдельный компонент и в него передавть пропсами to, style, и  имя */}
         </NavContainer>
       </Header>
       <Main>{children}</Main>
