@@ -12,7 +12,7 @@ export const CounterContainerStyled = styled.div`
   border: 2px solid rgb(146, 158, 247);
 `;
 
-export const ButtonContainerStyled = styled.button`
+export const ButtonContainerStyled = styled.div`
   width: 100px;
 `;
 
