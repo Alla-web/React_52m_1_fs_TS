@@ -38,7 +38,7 @@ import Lesson14 from "lessons/Lesson14/Lesson14";
 //consultations
 // import Consultation03 from "./consultations/consultatin03/Consultation03";
 // import Consultation04 from "./consultations/Consultation04/Consultation04-05";
-import Consultation06 from "consultations/Consultation06/Consultation06";
+// import Consultation06 from "consultations/Consultation06/Consultation06";
 
 function App() {
   return (

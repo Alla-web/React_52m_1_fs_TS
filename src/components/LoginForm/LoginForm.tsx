@@ -9,17 +9,7 @@ import * as Yup from "yup";
 import { ChangeEvent } from "react";
 
 function LoginForm (){
-    return(
-        <LoginFormContainer>
-            <Title>Login form</Title>
-            <InputsContainer>
-                <Input name='email' />
-                <Input name='password' />
-            </InputsContainer>
-            <Button/>
-        </LoginFormContainer>
-    );
-function LoginForm() {
+   
   //БУДЕМ КОНТРОЛИРОВАТЬ ФОРМУ ПРИ ПОМОЩИ ФОРМИКА, ПОЭТОМУ КОММЕНТИРУЕМ ПРЕЖНИЙ ВАРИАНТ КОНТРОЛЯ
   // const [email, setEmail] = useState<string>("");
   // const [password, setPassword] = useState<string>("");
@@ -59,8 +49,7 @@ function LoginForm() {
     //     "Max 20 sumbols",
     //     (value) => String(value).length <= 20
     //   ),
-    password: Yup.string()
-    password: Yup.string()
+    password: Yup.string() 
       .required('Required')
       .matches(passwordRegex, 'Password must be at least 8 characters long, include uppercase, lowercase and special character')
   });
